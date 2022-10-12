@@ -1,0 +1,111 @@
+
+/* NOTE: (QUESTION TO ASK AFTER COMPLETION) Once all elements are styled and positioned, 
+I would like to ask the question to the discord server and maybe do some research on 
+how to make elements disappear when window resizes*/
+
+/* NOTE: (QUESTION TO ASK BEFORE COMPLETION)I noticed on stack overflow someone asked 
+about resizing text when the window resizes. However, they suggest using viewport 
+width/height (vw, vh), rather than pixels for font sizes. The suggested font sizes are 
+in pixels, and vw and vh seem to scale the fonts differently. Is this something I should 
+concern myself for this project? The reason I ask about this is that I don't like the way 
+the text collapses when I shrink the window size*/
+
+html,
+body {
+    margin: 0; /* Allows for the whole window to be taken up by boxes*/
+    min-height: 100vh; /* Allows for webpage to take up entire window in the vertical direction*/
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: #1f2937;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 200px 50px; /* Important padding for defining the vertical limits of the web page*/
+    flex: auto;
+}
+
+.header-logo {
+    font-size: 24px;
+    color: #f9faf8;
+}
+
+.header-links {
+    font-size: 18px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+ }
+
+a {
+    color: #e5e7eb;
+    text-decoration: none;
+}
+
+.content {
+    display: flex;
+    flex-direction: column; /* allows for the flex items to take up all remaining*/
+    flex: 1;                /* white space and push the footer to the bottom.*/
+}                           /* Flex direction of the body being horizontal also contributes to this*/
+
+.section-1 {
+    background-color: #1f2937;
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* To be changed*/
+    padding: 0 200px 50px; /* Important padding for defining the vertical limits of the web page*/
+}
+
+.section-1 .subsection-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.section-1 .subsection-1 h1,
+.section-1 .subsection-1 div {
+    font-family: sans-serif;
+    color: #f9faf8;
+}
+
+.section-1 .subsection-1 h1{
+    font-size: 48px;
+    font: 800;
+    margin: 0;
+}
+
+.section-1 .subsection-1 div {
+    font-size: 18px;
+}
+
+.button-1 {
+    background-color: #3882f6;
+    color: #f9faf8;
+    border-style: solid;
+    border-color: #3882f6;
+    border-radius: 4px;
+    font-size: 16px;
+    font: 800;
+    max-width: 20%;
+}
+
+.section-1 .subsection-2 {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.image-placeholder {
+    padding: 75px 150px;
+    background-color: grey;
+    width: max-content;
+    display: flex;
+    align-items: center;
+}
+
