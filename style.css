@@ -154,3 +154,34 @@ a {
     border: 3px solid #3882f6;
     border-radius: 10px;
 }
+
+.section-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e5e7eb;
+    padding: 101.5px 285px;
+}
+
+.quote {
+    text-align: left;
+    max-width: 700px;
+    min-width: 700px;
+    font-size: 36px;
+    font-style: italic;
+    font-weight: lighter;
+    font-family: sans-serif;
+}
+
+.quotee {
+    font-family: sans-serif;
+    font-weight: bolder;
+    font-size: 24px;
+    margin-left: 350px; /* 170px*/
+    min-width: 260px;
+}
+
+/*NOTE: Finished styling section 3 of the content. I need to decide how I want 
+elements to collapse when window shrinks. I gave the text of this section a max width,
+but earlier sections do not have this. Should I wrap? Also button 1 should have a max width
+of not a percentage I believe.*/
