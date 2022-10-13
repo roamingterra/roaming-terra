@@ -10,6 +10,9 @@ in pixels, and vw and vh seem to scale the fonts differently. Is this something 
 concern myself for this project? The reason I ask about this is that I don't like the way 
 the text collapses when I shrink the window size*/
 
+/* NOTE: Need to commit change to html (button 2 -> button 1. Also, I added div containers
+for section 2 subsection 2*/
+
 html,
 body {
     margin: 0; /* Allows for the whole window to be taken up by boxes*/
@@ -92,7 +95,7 @@ a {
     border-radius: 4px;
     font-size: 16px;
     font: 800;
-    max-width: 20%;
+    max-width: 20%;    
 }
 
 .section-1 .subsection-2 {
@@ -109,3 +112,45 @@ a {
     align-items: center;
 }
 
+.section-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 101.5px;
+    gap: 30px;
+}
+
+.section-2 .subsection-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-container div {
+    text-align: center;
+    font-family: sans-serif; /* Same font-family and font size as the description*/
+    font-size: 18px;         /* in subsection-1*/ 
+    max-width: 136px;  
+}
+
+.section-2 h2 {
+    font-family: #1f2937;
+    font-size: 36px;
+    margin: 0;
+}
+
+.card {
+    background-color: white;
+    width: 130px;
+    height: 130px;
+    border: 3px solid #3882f6;
+    border-radius: 10px;
+}
