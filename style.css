@@ -95,7 +95,10 @@ a {
     border-radius: 4px;
     font-size: 16px;
     font: 800;
-    max-width: 20%;    
+    height: 35px;
+    min-height: 35px;
+    width: 90px;
+    min-width: 90px;    
 }
 
 .section-1 .subsection-2 {
@@ -185,3 +188,45 @@ a {
 elements to collapse when window shrinks. I gave the text of this section a max width,
 but earlier sections do not have this. Should I wrap? Also button 1 should have a max width
 of not a percentage I believe.*/
+
+/* Added a couple of div container to section-4*/
+
+/* Changed a div element under the call-to-action-container to a header element for specificity
+in the css.*/
+
+/* Changed the width of the button to a min width of 90px rather than vw or % */
+
+.section-4 {
+    display: flex;
+    justify-content: center;
+}
+
+.card-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    background-color: #3882f6;
+    margin: 100px;
+    padding: 50px;
+    width: 689px;
+}
+
+.call-to-action-container {
+    color: white;
+    font-family: sans-serif;
+}
+
+.call-to-action-container header {
+    font-size: 24px;
+}
+
+.button-2 {
+    height: 35px;
+    background-color: #3882f6;
+    color: white;
+    border: 3px solid white;
+    border-radius: 4px;
+    width: 90px;
+    min-width: 90px;
+}
