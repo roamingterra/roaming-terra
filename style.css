@@ -189,13 +189,6 @@ elements to collapse when window shrinks. I gave the text of this section a max 
 but earlier sections do not have this. Should I wrap? Also button 1 should have a max width
 of not a percentage I believe.*/
 
-/* Added a couple of div container to section-4*/
-
-/* Changed a div element under the call-to-action-container to a header element for specificity
-in the css.*/
-
-/* Changed the width of the button to a min width of 90px rather than vw or % */
-
 .section-4 {
     display: flex;
     justify-content: center;
@@ -229,4 +222,15 @@ in the css.*/
     border-radius: 4px;
     width: 90px;
     min-width: 90px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-family: sans-serif;
+    color: white;
+    background-color: #1f2937;
+    padding: 35px;
 }
