@@ -25,15 +25,24 @@ body {
     background-color: #1f2937;
     font-family: sans-serif;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 25px 200px 50px; /* Important padding for defining the vertical limits of the web page*/
-    flex: auto;
+    padding: 25px 200px 50px; /* Important padding for defining the vertical limits of the web page*/  
+    flex-wrap: wrap;                    
 }
 
 .header-logo {
+    /*min-width: 0; /* Added to shrink links when window shrinks*/
+    display: flex;
+    flex-grow: 0;
+    flex-basis: 0;
+}
+
+.logo {
     font-size: 24px;
     color: #f9faf8;
+    min-width: 139px;
+    padding-bottom: 10px;
 }
 
 .header-links {
@@ -43,11 +52,29 @@ body {
     padding: 0;
     display: flex;
     gap: 20px;
+    justify-content: flex-end;
+    text-align: center; /* Added to center links when window shrinks*/
+    /*min-width: 0; /* Added to shrink links when window shrinks*/
+    flex-grow: 1;
+    flex-basis: 0;
+    padding-bottom: 10px;
  }
 
 a {
     color: #e5e7eb;
     text-decoration: none;
+}
+
+.link-1{
+    min-width: 62.05px;
+}
+
+.link-2{
+    min-width: 60.02px;
+}
+
+.link-3{
+    min-width: 73.04px;
 }
 
 .content {
@@ -56,19 +83,37 @@ a {
     flex: 1;                /* white space and push the footer to the bottom.*/
 }                           /* Flex direction of the body being horizontal also contributes to this*/
 
+
+
 .section-1 {
-    background-color: #1f2937;
+    /*background-color: #1f2937;*/
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: center; /*Justify content center is the key to keeping it center as the window gets smaller*/
     gap: 30px; /* To be changed*/
-    padding: 0 200px 50px; /* Important padding for defining the vertical limits of the web page*/
+    /*padding: 0 200px 50px; /* 200px (right left) Important padding for defining the vertical limits of the web page*/
+    /*flex-grow: 1; /* Added this !!!!!!!!!!*/
+    flex-wrap: wrap;
+    /*max-width: 1040px;*/
+
+    padding: 0 200px 50px;
+    background-color: #1f2937;
+    
 }
 
 .section-1 .subsection-1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
     gap: 10px;
+    /*min-width: 500px; /* Added this !!!!!!!!!!*/
+   /*height: 200px; /* Added this !!!!!!!!!!*/
+    flex-grow: 1; /* Added this !!!!!!!!!!*/
+    flex-shrink: 1;
+    flex-basis: 0; /* Allows element to have same starting point when both elements' flex basis are set to 0*/
+    min-width: 300px; /* Added this !!!!!!!!!!*/
+    /* width: 50%;*/
 }
 
 .section-1 .subsection-1 h1,
@@ -81,10 +126,12 @@ a {
     font-size: 48px;
     font: 800;
     margin: 0;
+    max-width: 350px;
 }
 
 .section-1 .subsection-1 div {
     font-size: 18px;
+    max-width: 500px; /* Added!!!!!!!!!!*/
 }
 
 .button-1 {
@@ -104,23 +151,35 @@ a {
 .section-1 .subsection-2 {
     display: flex;
     justify-content: center;
-    
+    align-items: center;
+    /*width: 900px; /*512px*/
+    /*height: 206px; /*206px*/
+    /*min-width: 500px;*/
+    /*min-height: 300px;*/
+    background-color: grey;
+    /*min-width: 500px; /* Added this !!!!!!!!!!*/
+    /*height: 200px; /* Added this !!!!!!!!!!*/
+    flex-grow: 1; /* Added this !!!!!!!!!!*/
+    flex-shrink: 1;
+    flex-basis: 0;
+    min-width: 300px; /* Added this !!!!!!!!!!*/
+    min-height: 200px;
+    /*width: 50%;*/
 }
 
 .image-placeholder {
-    padding: 75px 150px;
-    background-color: grey;
-    width: max-content;
-    display: flex;
-    align-items: center;
+    /*padding: 75px 150px;*/
+    /*background-color: grey;*/
+    /*width: max-content;*/
+    /*display: flex;*/
+    /*align-items: center;*/
 }
 
 .section-2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 30px;
-    padding-bottom: 101.5px;
+    padding: 30px 20px 101.5px; /* Added padding and flex wrap to have images wrap when window shrinks*/
     gap: 30px;
 }
 
@@ -129,6 +188,7 @@ a {
     flex-direction: row;
     justify-content: center;
     gap: 40px;
+    flex-wrap: wrap; /* Added padding and flex wrap to have images wrap when window shrinks*/
 }
 
 .card-container {
@@ -163,13 +223,15 @@ a {
     flex-direction: column;
     align-items: center;
     background-color: #e5e7eb;
-    padding: 101.5px 285px;
+    padding: 101.5px 24%; /* NOTE: changed the right and left padding to a percentage*/
+                          /* so that when the window is completely horizontally minimized,*/  
+                          /* the quotee is directly under the quote and inline. This will*/
+                          /* change however when the quotee changes. */
 }
 
 .quote {
     text-align: left;
-    max-width: 700px;
-    min-width: 700px;
+    /*min-width: 300px;*/
     font-size: 36px;
     font-style: italic;
     font-weight: lighter;
@@ -180,8 +242,11 @@ a {
     font-family: sans-serif;
     font-weight: bolder;
     font-size: 24px;
-    margin-left: 350px; /* 170px*/
-    min-width: 260px;
+    /*max-width: 700px;*/
+    /*text-align: right;*/
+    margin-left: auto; /* This is what will keep the quotee aligned with the quote*/
+    
+     
 }
 
 /*NOTE: Finished styling section 3 of the content. I need to decide how I want 
