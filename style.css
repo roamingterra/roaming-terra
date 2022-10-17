@@ -192,17 +192,23 @@ a {
 .section-4 {
     display: flex;
     justify-content: center;
+    margin: 100px;
 }
 
 .card-2 {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-end;
+    gap: 20px 0;
     flex-wrap: wrap;
     background-color: #3882f6;
-    margin: 100px;
-    padding: 50px;
-    width: 689px;
+    padding: 50px 150px;
+    width: 738px;
+}
+
+.call-to-action-container {
+    flex: 6 1 0;
+    min-width: 250px;
 }
 
 .call-to-action-container header {
@@ -211,7 +217,11 @@ a {
 }
 
 .call-to-action-container div {
-    color: #E5E7Eb;
+    color: #E5E7Eb;  
+}
+
+.button-container {
+    flex: 1 1 0;
 }
 
 .button-2 {
@@ -220,7 +230,7 @@ a {
     color: white;
     border: 3px solid white;
     border-radius: 4px;
-    width: 90px;
+    max-width: 90px;
     min-width: 90px;
 }
 
