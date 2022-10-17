@@ -1,63 +1,42 @@
-
-/* NOTE: (QUESTION TO ASK AFTER COMPLETION) Once all elements are styled and positioned, 
-I would like to ask the question to the discord server and maybe do some research on 
-how to make elements disappear when window resizes*/
-
-/* NOTE: (QUESTION TO ASK BEFORE COMPLETION)I noticed on stack overflow someone asked 
-about resizing text when the window resizes. However, they suggest using viewport 
-width/height (vw, vh), rather than pixels for font sizes. The suggested font sizes are 
-in pixels, and vw and vh seem to scale the fonts differently. Is this something I should 
-concern myself for this project? The reason I ask about this is that I don't like the way 
-the text collapses when I shrink the window size*/
-
-/* NOTE: Need to commit change to html (button 2 -> button 1. Also, I added div containers
-for section 2 subsection 2*/
-
 html,
 body {
-    margin: 0; /* Allows for the whole window to be taken up by boxes*/
-    min-height: 100vh; /* Allows for webpage to take up entire window in the vertical direction*/
     display: flex;
     flex-direction: column;
+    margin: 0; /* Allows for the whole window to be taken up by boxes*/
+    min-height: 100vh; /* Allows for webpage to take up entire window in the vertical direction*/
+    font-family: sans-serif;
 }
 
 .header {
-    background-color: #1f2937;
-    font-family: sans-serif;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 25px 200px 50px; /* Important padding for defining the vertical limits of the web page*/  
-    flex-wrap: wrap;                    
+    justify-content: center; /*Key to keeping it center as the window gets smaller*/
+    flex-wrap: wrap; 
+    padding: 25px 200px 50px; /* Important padding for defining the vertical limits of the web page content*/ 
+    background-color: #1f2937;                 
 }
 
 .header-logo {
-    /*min-width: 0; /* Added to shrink links when window shrinks*/
     display: flex;
-    flex-grow: 0;
-    flex-basis: 0;
+    flex: 0; /* Short-hand for 0 1 0. It does not matter what flex shrink is in this case*/
 }
 
 .logo {
+    padding-bottom: 10px;
+    min-width: 139px;
     font-size: 24px;
     color: #f9faf8;
-    min-width: 139px;
-    padding-bottom: 10px;
 }
 
 .header-links {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1; /* Shorthand for 1 1 0 */
+    gap: 20px;
+    margin: 0;
+    padding: 0 0 10px;
     font-size: 18px;
     list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px;
-    justify-content: flex-end;
     text-align: center; /* Added to center links when window shrinks*/
-    /*min-width: 0; /* Added to shrink links when window shrinks*/
-    flex-grow: 1;
-    flex-basis: 0;
-    padding-bottom: 10px;
  }
 
 a {
@@ -83,96 +62,65 @@ a {
     flex: 1;                /* white space and push the footer to the bottom.*/
 }                           /* Flex direction of the body being horizontal also contributes to this*/
 
-
-
 .section-1 {
-    /*background-color: #1f2937;*/
     display: flex;
-    flex-direction: row;
-    justify-content: center; /*Justify content center is the key to keeping it center as the window gets smaller*/
-    gap: 30px; /* To be changed*/
-    /*padding: 0 200px 50px; /* 200px (right left) Important padding for defining the vertical limits of the web page*/
-    /*flex-grow: 1; /* Added this !!!!!!!!!!*/
+    justify-content: center; /* Key to keeping it center as the window gets smaller*/
+    gap: 30px;
     flex-wrap: wrap;
-    /*max-width: 1040px;*/
-
     padding: 0 200px 50px;
     background-color: #1f2937;
-    
+}
+
+.container {
+    display: flex;
+    flex: 1; /* Short-hand for 1 1 0*/
+    /* Allows element to have same starting point when both elements' flex basis are set to 0*/
+    justify-content: center;
+    min-width: 300px;
+    min-height: 200px;
 }
 
 .section-1 .subsection-1 {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-start;
     gap: 10px;
-    /*min-width: 500px; /* Added this !!!!!!!!!!*/
-   /*height: 200px; /* Added this !!!!!!!!!!*/
-    flex-grow: 1; /* Added this !!!!!!!!!!*/
-    flex-shrink: 1;
-    flex-basis: 0; /* Allows element to have same starting point when both elements' flex basis are set to 0*/
-    min-width: 300px; /* Added this !!!!!!!!!!*/
-    /* width: 50%;*/
 }
 
 .section-1 .subsection-1 h1,
-.section-1 .subsection-1 div {
-    font-family: sans-serif;
+.section-1 .subsection-1 button {
     color: #f9faf8;
 }
 
 .section-1 .subsection-1 h1{
-    font-size: 48px;
-    font: 800;
     margin: 0;
     max-width: 350px;
+    font-size: 48px;
+    font: 800;
 }
 
 .section-1 .subsection-1 div {
+    max-width: 500px;
     font-size: 18px;
-    max-width: 500px; /* Added!!!!!!!!!!*/
+    color: #e5e7eb;
 }
 
 .button-1 {
+    height: 35px;
+    min-height: 35px;
+    width: 90px;
+    min-width: 90px; 
     background-color: #3882f6;
-    color: #f9faf8;
     border-style: solid;
     border-color: #3882f6;
     border-radius: 4px;
     font-size: 16px;
     font: 800;
-    height: 35px;
-    min-height: 35px;
-    width: 90px;
-    min-width: 90px;    
 }
 
 .section-1 .subsection-2 {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    /*width: 900px; /*512px*/
-    /*height: 206px; /*206px*/
-    /*min-width: 500px;*/
-    /*min-height: 300px;*/
     background-color: grey;
-    /*min-width: 500px; /* Added this !!!!!!!!!!*/
-    /*height: 200px; /* Added this !!!!!!!!!!*/
-    flex-grow: 1; /* Added this !!!!!!!!!!*/
-    flex-shrink: 1;
-    flex-basis: 0;
-    min-width: 300px; /* Added this !!!!!!!!!!*/
-    min-height: 200px;
-    /*width: 50%;*/
-}
-
-.image-placeholder {
-    /*padding: 75px 150px;*/
-    /*background-color: grey;*/
-    /*width: max-content;*/
-    /*display: flex;*/
-    /*align-items: center;*/
+    color: white;
 }
 
 .section-2 {
@@ -183,9 +131,14 @@ a {
     gap: 30px;
 }
 
+.section-2 h2 {
+    margin: 0;
+    font-family: #1f2937;
+    font-size: 36px;
+}
+
 .section-2 .subsection-2 {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     gap: 40px;
     flex-wrap: wrap; /* Added padding and flex wrap to have images wrap when window shrinks*/
@@ -198,16 +151,10 @@ a {
 }
 
 .card-container div {
+    max-width: 136px;
     text-align: center;
-    font-family: sans-serif; /* Same font-family and font size as the description*/
-    font-size: 18px;         /* in subsection-1*/ 
-    max-width: 136px;  
-}
-
-.section-2 h2 {
-    font-family: #1f2937;
-    font-size: 36px;
-    margin: 0;
+    font-size: 18px;
+    color: grey;
 }
 
 .card {
@@ -231,28 +178,16 @@ a {
 
 .quote {
     text-align: left;
-    /*min-width: 300px;*/
     font-size: 36px;
     font-style: italic;
-    font-weight: lighter;
-    font-family: sans-serif;
+    font-weight: lighter;  
 }
 
-.quotee {
-    font-family: sans-serif;
+.quotee {   
     font-weight: bolder;
     font-size: 24px;
-    /*max-width: 700px;*/
-    /*text-align: right;*/
-    margin-left: auto; /* This is what will keep the quotee aligned with the quote*/
-    
-     
+    margin-left: auto; /* This is what will keep the quotee aligned with the quote*/  
 }
-
-/*NOTE: Finished styling section 3 of the content. I need to decide how I want 
-elements to collapse when window shrinks. I gave the text of this section a max width,
-but earlier sections do not have this. Should I wrap? Also button 1 should have a max width
-of not a percentage I believe.*/
 
 .section-4 {
     display: flex;
@@ -270,13 +205,13 @@ of not a percentage I believe.*/
     width: 689px;
 }
 
-.call-to-action-container {
-    color: white;
-    font-family: sans-serif;
-}
-
 .call-to-action-container header {
     font-size: 24px;
+    color: white;
+}
+
+.call-to-action-container div {
+    color: #E5E7Eb;
 }
 
 .button-2 {
@@ -294,8 +229,7 @@ of not a percentage I believe.*/
     justify-content: center;
     align-items: center;
     font-size: 16px;
-    font-family: sans-serif;
-    color: white;
+    color: #e5e7eb;
     background-color: #1f2937;
     padding: 35px;
 }
