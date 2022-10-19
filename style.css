@@ -10,7 +10,7 @@ body {
 .header {
     display: flex;
     justify-content: center; /*Key to keeping it center as the window gets smaller*/
-    position: sticky;
+    position: sticky; /* Keeps the header at the top of the window even when scrolling*/
     top: 0;
     z-index: 999;
     flex-wrap: wrap; 
