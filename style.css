@@ -10,9 +10,12 @@ body {
 .header {
     display: flex;
     justify-content: center; /*Key to keeping it center as the window gets smaller*/
+    position: sticky;
+    top: 0;
+    z-index: 999;
     flex-wrap: wrap; 
-    padding: 25px 200px 50px; /* Important padding for defining the vertical limits of the web page content*/ 
-    background-color: #1f2937;                 
+    padding: 25px 200px 0; /* Important padding for defining the vertical limits of the web page content*/ 
+    background-color: black;                 
 }
 
 .header-logo {
@@ -20,16 +23,15 @@ body {
     flex: 0; /* Short-hand for 0 1 0. It does not matter what flex shrink is in this case*/
 }
 
-.logo {
+.logo img{
     padding-bottom: 10px;
-    min-width: 139px;
-    font-size: 24px;
-    color: #f9faf8;
+    width: 200px;
 }
 
 .header-links {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     flex: 1; /* Shorthand for 1 1 0 */
     gap: 20px;
     margin: 0;
@@ -40,20 +42,20 @@ body {
  }
 
 a {
-    color: #e5e7eb;
+    color: white;
     text-decoration: none;
 }
 
 .link-1{
-    min-width: 62.05px;
+    min-width: 48.02px;
 }
 
 .link-2{
-    min-width: 60.02px;
+    min-width: 123.07px;
 }
 
 .link-3{
-    min-width: 73.04px;
+    min-width: 86.05px;
 }
 
 .content {
@@ -67,8 +69,9 @@ a {
     justify-content: center; /* Key to keeping it center as the window gets smaller*/
     gap: 30px;
     flex-wrap: wrap;
-    padding: 0 200px 50px;
-    background-color: #1f2937;
+    padding: 50px 200px 50px;
+    background-image: url(./images/orange-background.jpeg);
+    background-size: cover; /* Resize the background image to cover the entire container*/
 }
 
 .container {
@@ -93,7 +96,7 @@ a {
 
 .section-1 .subsection-1 h1{
     margin: 0;
-    max-width: 350px;
+    max-width: 500px;
     font-size: 48px;
     font: 800;
 }
@@ -101,7 +104,7 @@ a {
 .section-1 .subsection-1 div {
     max-width: 500px;
     font-size: 18px;
-    color: #e5e7eb;
+    color: white;
 }
 
 .button-1 {
@@ -119,8 +122,12 @@ a {
 
 .section-1 .subsection-2 {
     align-items: center;
-    background-color: grey;
-    color: white;
+}
+
+.section-1 img { /* Allows for shrinking of image*/
+    width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
 }
 
 .section-2 {
@@ -129,6 +136,13 @@ a {
     align-items: center;
     padding: 30px 20px 101.5px; /* Added padding and flex wrap to have images wrap when window shrinks*/
     gap: 30px;
+}
+
+.section-2 #some-locations { /* Creates offset for the "some-locations" jump link*/
+    display: block;
+    position: relative;
+    top: -135px;
+    visibility: hidden;
 }
 
 .section-2 h2 {
@@ -154,22 +168,31 @@ a {
     max-width: 136px;
     text-align: center;
     font-size: 18px;
-    color: grey;
+    color: black;
+    font-weight: bold;
 }
 
 .card {
     background-color: white;
     width: 130px;
     height: 130px;
-    border: 3px solid #3882f6;
+    border: 3px solid #cc5500;
     border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.section-2 img{
+    width: 130px;
+    height: 130px;
 }
 
 .section-3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #e5e7eb;
+    background-image: url(./images/grey-landscape.jpeg);
+    background-size: cover; /* Resize the background image to cover the entire container*/
+    background-attachment: fixed;
     padding: 101.5px 24%; /* NOTE: changed the right and left padding to a percentage*/
                           /* so that when the window is completely horizontally minimized,*/  
                           /* the quotee is directly under the quote and inline. This will*/
@@ -201,7 +224,8 @@ a {
     align-items: flex-end;
     gap: 20px 0;
     flex-wrap: wrap;
-    background-color: #3882f6;
+    background-image: url(./images/orange-background.jpeg);
+    background-size: cover; /* Resize the background image to cover the entire container*/
     padding: 50px 150px;
     width: 738px;
 }
@@ -217,7 +241,7 @@ a {
 }
 
 .call-to-action-container div {
-    color: #E5E7Eb;  
+    color: white;  
 }
 
 .button-container {
@@ -236,10 +260,12 @@ a {
 
 .footer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 5px;
     font-size: 16px;
     color: #e5e7eb;
-    background-color: #1f2937;
+    background-color: black;
     padding: 35px;
 }
